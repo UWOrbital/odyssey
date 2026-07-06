@@ -10,6 +10,11 @@ project(
 if(NOT EXISTS ${CMAKE_BINARY_DIR}/toolchain)
   include(${CMAKE_SOURCE_DIR}/cmake/download_arm_toolchain.cmake)
 endif()
+
+# Setting a file to declare a custom toolchain (in this case arm-eabi-none)
 set(CMAKE_TOOLCHAIN_FILE ${CMAKE_SOURCE_DIR}/cmake/toolchain_arm_none_eabi.cmake)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 enable_language(C CXX ASM)
+
+# Adding FreeRTOS
+add_subdirectory(freertos)
