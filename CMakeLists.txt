@@ -18,3 +18,4 @@ enable_language(C CXX ASM)
 
 # Adding FreeRTOS
 add_subdirectory(freertos)
+add_subdirectory(portable)
